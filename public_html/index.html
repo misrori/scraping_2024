@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University List with Python Code</title>
+</head>
+<body>
+    <h1>Universities Around the World</h1>
+
+    <!-- University 1 -->
+    <div class="university" id="uni-1">
+        <h2 class="name">Harvard University</h2>
+        <p class="location">Location: Cambridge, Massachusetts, USA</p>
+        <p class="description">Harvard is one of the most prestigious universities in the world.</p>
+    </div>
+
+    <!-- University 2 -->
+    <div class="university" id="uni-2">
+        <h2 class="name">University of Cambridge</h2>
+        <p class="location">Location: Cambridge, England</p>
+        <p class="description">The University of Cambridge is known for its excellence in research and education.</p>
+    </div>
+
+    <!-- University 3 -->
+    <div class="university" id="uni-3">
+        <h2 class="name">Central European University</h2>
+        <p class="location">Location: Vienna, Austria</p>
+        <p class="description">CEU is The best university ever.</p>
+    </div>
+
+    <!-- A table of universities with rankings -->
+    <h3>University Rankings</h3>
+    <table border="1" class="rankings">
+        <tr>
+            <th>Rank</th>
+            <th>University</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Harvard University</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>University of Cambridge</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Stanford University</td>
+            <td>USA</td>
+        </tr>
+    </table>
+
+    <!-- List of additional universities -->
+    <h3>Additional Universities</h3>
+    <ul>
+        <li>Massachusetts Institute of Technology (MIT)</li>
+        <li>University of Oxford</li>
+        <li>California Institute of Technology (Caltech)</li>
+    </ul>
+
+    <!-- Python Code Block -->
+    <h2>Python Code for Web Scraping</h2>
+    <pre><code>
+from bs4 import BeautifulSoup
+
+# Load the HTML content
+with open("universities.html", "r") as file:
+    html_content = file.read()
+
+soup = BeautifulSoup(html_content, "html.parser")
+
+# Using find and find_all
+first_university = soup.find("div", class_="university")
+all_universities = soup.find_all("div", class_="university")
+
+print("First university using find:")
+print(first_university.h2.text)
+
+print("\nAll universities using find_all:")
+for uni in all_universities:
+    print(uni.h2.text)
+
+# Using select and select_one
+first_university_select = soup.select_one(".university")
+all_universities_select = soup.select(".university")
+
+print("\nFirst university using select_one:")
+print(first_university_select.h2.text)
+
+print("\nAll universities using select:")
+for uni in all_universities_select:
+    print(uni.h2.text)
+    </code></pre>
+
+</body>
+</html>
