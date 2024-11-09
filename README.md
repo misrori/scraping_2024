@@ -81,4 +81,4 @@ This repository contains files and scripts for the **VAPS Scraping Class**, wher
   - Learned the differences between `find` and `select` methods in BeautifulSoup.
   - Scraped data from the GeekWire website as an example, focusing on article titles.
 
-  [Link to Week 1 Script](./session_1_on_class.py)
+  [Link to Week 1 Script](session_1_on_class.ipynb)
